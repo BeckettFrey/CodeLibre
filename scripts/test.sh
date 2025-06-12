@@ -6,21 +6,21 @@
 set -e
 
 # Project directory
-PROJECT_DIR="/Users/beckettfrey/Desktop/code/projects/GitClaude"
+GIT_CLAUDE_PATH="/Users/beckettfrey/Desktop/code/projects/GitClaude"
 
 # Check if project directory exists
-if [ ! -d "$PROJECT_DIR" ]; then
-    echo "Error: Project directory $PROJECT_DIR not found!"
+if [ ! -d "$GIT_CLAUDE_PATH" ]; then
+    echo "Error: Project directory $GIT_CLAUDE_PATH not found!"
     exit 1
 fi
 
-cd "$PROJECT_DIR" || {
-    echo "Error: Could not change to $PROJECT_DIR"
+cd "$GIT_CLAUDE_PATH" || {
+    echo "Error: Could not change to $GIT_CLAUDE_PATH"
     exit 1
 }
 
 # Activate virtual environment
-VENV_DIR="$PROJECT_DIR/.venv"
+VENV_DIR="$GIT_CLAUDE_PATH/.venv"
 if [ ! -d "$VENV_DIR" ]; then
     echo "Error: Virtual environment not found at $VENV_DIR"
     echo "Please create it with: python -m venv .venv"
@@ -70,8 +70,8 @@ for dir in "${EXPECTED_DIRS[@]}"; do
 done
 
 # Set PYTHONPATH
-export PYTHONPATH="$PYTHONPATH:$PROJECT_DIR"
-echo "PYTHONPATH set to include $PROJECT_DIR"
+export PYTHONPATH="$PYTHONPATH:$GIT_CLAUDE_PATH"
+echo "PYTHONPATH set to include $GIT_CLAUDE_PATH"
 
 # Run pytest
 echo "Running tests..."

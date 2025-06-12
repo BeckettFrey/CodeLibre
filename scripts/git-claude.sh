@@ -27,9 +27,26 @@ if [ "$FRESH" = true ]; then
 fi
 
 # Handle CLI arguments
-if [ "$1" == "-c" ]; then
+if [ "$1" == "--staged" ]; then
     python $GIT_CLAUDE_PATH/main.py
+
+elif [ "$1" == "-e" ]; then
+    echo "🔧 Running git add for specified files"
+    git add "${@:2}"
+    python $GIT_CLAUDE_PATH/main.py
+
+elif [ "$1" == "--all" ]; then
+    echo "🔧 Running git add for all files"
+    git add .
+    python $GIT_CLAUDE_PATH/main.py
+
 else
-    echo "Usage: ./scripts/git-claude.sh -c"
-    echo "  -c   Run commit generation"
+    echo ""
+    echo "Usage: git-claude.sh [option]"
+    echo ""
+    echo "  --staged    Generate message from staged changes"
+    echo "  --all       Stage all files and generate message"
+    echo "  -e <files>  Add specified files before generating message"
+    echo ""
 fi
+
