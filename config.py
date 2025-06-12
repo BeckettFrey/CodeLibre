@@ -1,3 +1,5 @@
+# GitClaude/config.py
+
 COMMIT_TEMPLATE = """ Generate a commit message for the code diff below in the format: 
 <prefix>: <summary>
 

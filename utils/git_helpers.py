@@ -1,3 +1,5 @@
+# GitClaude/utils/git_helpers.py
+
 import subprocess
 import re
 

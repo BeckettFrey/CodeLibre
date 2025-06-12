@@ -4,9 +4,8 @@
 
 # Exit on any error
 set -e
-
 # Project directory
-GIT_CLAUDE_PATH="/Users/beckettfrey/Desktop/code/projects/GitClaude"
+GIT_CLAUDE_PATH=...
 
 # Check if project directory exists
 if [ ! -d "$GIT_CLAUDE_PATH" ]; then

@@ -1,4 +1,4 @@
-# main.py
+# GitClaude/main.py
 from utils.git_helpers import get_staged_diff, confirm_and_commit, sanitize_commit_message, is_valid_commit_message
 from graph.graph import create_stateless_chat
 from config import COMMIT_TEMPLATE, CHARACTER_LIMIT
