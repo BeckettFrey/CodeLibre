@@ -12,5 +12,4 @@ SYSTEM_PROMPT = "Output only the commit message."
 
 SYSTEM_PROMPT = "Return only the commit message. No quotes. No explanation."
 
-CHARACTER_LIMIT = 8000  # Limit for anthropic API input
-TEST_CHARACTER_LIMIT = 1000  # Limit for testing purposes
+CHARACTER_LIMIT = 8000  # Limit for efficient anthropic API input
