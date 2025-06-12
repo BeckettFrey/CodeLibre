@@ -1,10 +1,11 @@
+# graph/nodes.py
+
 import os
 from anthropic import Anthropic
-from langgraph_chat.state import ChatState
+from .state import ChatState
 from dotenv import load_dotenv
 from config import SYSTEM_PROMPT
 
-# Load environment variables from .env
 load_dotenv()
 api_key = os.getenv("ANTHROPIC_API_KEY")
 if not api_key:

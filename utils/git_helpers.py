@@ -3,13 +3,21 @@ import re
 
 def get_staged_diff() -> str:
     result = subprocess.run(["git", "diff", "--cached"], capture_output=True, text=True)
-    return sanitize_commit_message(result.stdout.strip())
+    return result.stdout.strip()
 
 def sanitize_commit_message(msg: str) -> str:
-    # Allow only lowercase letters, spaces, periods, and colons
-    return re.sub(r"[^a-z .:]", "", msg.lower())
+    # Allow only lowercase letters, spaces, periods, numbers and colons
+    return re.sub(r"[^a-z .:0-9]", "", msg.lower())
+
+def is_valid_commit_message(msg: str) -> bool:
+    # Ensure the message is non-empty and has at least one letter
+    return bool(msg and any(char.isalpha() for char in msg))
 
 def confirm_and_commit(commit_msg: str):
+    if not is_valid_commit_message(commit_msg):
+        print("Error: Invalid Message")
+        return
+    
     print("\nSuggested Commit Message:\n" + "-"*40)
     print(commit_msg)
     print("-"*40)
@@ -20,4 +28,6 @@ def confirm_and_commit(commit_msg: str):
         print("✅ Commit completed.")
     else:
         print("❌ Commit canceled.")
+
+        
 

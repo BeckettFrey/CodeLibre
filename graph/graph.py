@@ -1,6 +1,8 @@
+# graph/graph.py
+
 from langgraph.graph import StateGraph, END
-from langgraph_chat.state import ChatState
-from langgraph_chat.nodes import process_query
+from .state import ChatState
+from .nodes import process_query
 
 def build_stateless_chat_graph():
     graph = StateGraph(ChatState)
