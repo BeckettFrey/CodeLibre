@@ -14,12 +14,13 @@ def generate_commit_message():
         return
     
     commit_msg = sanitize_commit_message(diff)
-    if not is_valid_commit_message(commit_msg):
-        print("Agent Failure - Try again")
+
+    if len(commit_msg) > CHARACTER_LIMIT:
+        print(f"❗❗❗ (over {CHARACTER_LIMIT} characters) ❗❗❗")
         return
     
-    if len(diff) > CHARACTER_LIMIT:
-        print(f"❗❗❗ (over {CHARACTER_LIMIT} characters) ❗❗❗")
+    if not is_valid_commit_message(commit_msg):
+        print("❌ Agent Error: Invalid commit message format")
         return
 
     print("🔍 Analyzing staged changes...")
@@ -28,9 +29,7 @@ def generate_commit_message():
     result = chat_app.invoke({"current_message": prompt})
 
     raw_commit_msg = result['response'].strip()
-
     commit_msg = sanitize_commit_message(raw_commit_msg)
-
     confirm_and_commit(commit_msg)
 
 if __name__ == "__main__":

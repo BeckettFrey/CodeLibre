@@ -14,18 +14,18 @@ def is_valid_commit_message(msg: str) -> bool:
     return bool(msg and any(char.isalpha() for char in msg))
 
 def confirm_and_commit(commit_msg: str):
-    print("\n" + "-"*40)
+    print("\n" + "-"*20 + " M " + "-"*20)
     print(commit_msg)
-    print("-"*40)
+    print("-"*43 + "\n")
 
-    print("❓ Proceed with this commit message? (y/n): ")
-    confirm = input().strip().lower()
-    
+    confirm = input("❓ Proceed with this commit message? (y/n): ").strip().lower()
+
     if confirm == "y":
+        print("\n")
         subprocess.run(["git", "commit", "-m", commit_msg])
-        print("✅ Commit completed.")
+        print("\n✅ Commit completed.")
     else:
-        print("❌ Commit canceled.")
+        print("\n❌ Commit canceled.")
 
         
 
