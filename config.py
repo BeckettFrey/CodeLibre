@@ -8,8 +8,6 @@ Rules:
 
 Code diff: {diff} """
 
-SYSTEM_PROMPT = "Output only the commit message."
-
 SYSTEM_PROMPT = "Return only the commit message. No quotes. No explanation."
 
 CHARACTER_LIMIT = 8000  # Limit for efficient anthropic API input
