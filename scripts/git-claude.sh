@@ -1,3 +1,4 @@
+# File: scripts/git-claude.sh
 #!/bin/bash
 GIT_CLAUDE_PATH="/Users/beckettfrey/Desktop/code/projects/GitClaude"
 FRESH=false

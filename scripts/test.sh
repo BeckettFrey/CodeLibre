@@ -1,3 +1,4 @@
+# File: scripts/test.sh
 #!/bin/bash
 
 # Script to run pytest tests for GitClaude project
@@ -5,7 +6,7 @@
 # Exit on any error
 set -e
 # Project directory
-GIT_CLAUDE_PATH=...
+GIT_CLAUDE_PATH="."
 
 # Check if project directory exists
 if [ ! -d "$GIT_CLAUDE_PATH" ]; then
