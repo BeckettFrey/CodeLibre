@@ -1,4 +1,5 @@
 # GitClaude
+[![CI](https://github.com/BeckettFrey/GitClaude/actions/workflows/ci.yml/badge.svg)](https://github.com/BeckettFrey/GitClaude/actions/workflows/ci.yml)
 
 **GitClaude** is a lightweight, AI-powered Git automation tool. Built on Anthropic Claude and LangGraph, it brings intelligent assistance to your local development workflow—starting with commit message generation and expanding toward deeper code context, changelogs, etc.
 
