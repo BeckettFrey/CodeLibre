@@ -1,3 +1,4 @@
+
 # File: scripts/git-claude.sh
 #!/bin/bash
 GIT_CLAUDE_PATH="/Users/beckettfrey/Desktop/code/projects/GitClaude"
@@ -39,7 +40,7 @@ elif [ "$1" == "-e" ]; then
 elif [ "$1" == "--all" ]; then
     echo "🔧 Running git add for all files"
     git add .
-    python $GIT_CLAUDE_PATH/main.py
+    python $GIT_CLAUDE_PATH/cli.py
 
 else
     echo ""

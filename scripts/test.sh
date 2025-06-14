@@ -4,7 +4,8 @@
 # Works locally and in GitHub Actions
 
 set -e
-
+python -m ensurepip --upgrade
+python -m pip install --upgrade "pip==25.1.1"
 echo "🔍 Checking environment..."
 
 # Only try to activate virtualenv if it exists
