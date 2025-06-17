@@ -1,3 +1,2 @@
-# GitClaude/tests/test_state.py
-
+# File: tests/unit/test_state.py
 # TODO

@@ -1,7 +1,7 @@
-# GitClaude/graph/graph.py
+# File: src/gitclaude/graph/graph.py
 from langgraph.graph import StateGraph, END
-from .state import ChatState
-from .nodes import process_query
+from gitclaude.graph.state import ChatState
+from gitclaude.graph.nodes import process_query
 
 def build_stateless_chat_graph():
     graph = StateGraph(ChatState)

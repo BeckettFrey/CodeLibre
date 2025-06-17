@@ -1,5 +1,4 @@
-# GitClaude/tests/graph/state.py
-
+# File: src/gitclaude/graph/state.py
 from typing import Any
 from pydantic import BaseModel, Field
 

@@ -1,6 +1,6 @@
-# GitClaude/tests/test_utils/test_git_helpers.py
+# File: tests/unit/test_git_helpers.py
 import pytest
-from utils.git_helpers import sanitize_commit_message, is_valid_commit_message
+from gitclaude.utils.git_helpers import sanitize_commit_message, is_valid_commit_message
 
 @pytest.mark.parametrize("raw,sanitized", [
     ("Fix: Refactor 💥 tests", "fix: refactor  tests"),

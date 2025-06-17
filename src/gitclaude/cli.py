@@ -1,28 +1,23 @@
-# File: cli.py
+# File: src/gitclaude/cli.py
 import subprocess
 import sys
-
-from utils.git_helpers import (
+from gitclaude.utils.git_helpers import (
     get_staged_diff,
     confirm_and_commit,
     sanitize_commit_message,
     is_valid_commit_message
 )
-
-from graph.graph import create_stateless_chat
-from config import COMMIT_TEMPLATE, CHARACTER_LIMIT
-
+from gitclaude.graph.graph import create_stateless_chat
+from gitclaude.config import COMMIT_TEMPLATE, CHARACTER_LIMIT
 
 def build_commit_prompt(diff: str) -> str:
     return COMMIT_TEMPLATE.format(diff=diff)
-
 
 def run_git_command(args):
     result = subprocess.run(["git"] + args, capture_output=True, text=True)
     if result.returncode != 0:
         print(f"❌ Git error: {result.stderr.strip()}")
         sys.exit(1)
-
 
 def cli():
     args = sys.argv[1:]

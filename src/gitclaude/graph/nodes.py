@@ -1,9 +1,9 @@
-# GitClaude/tests/graph/nodes.py
+# File: src/gitclaude/graph/nodes.py
 import os
 from anthropic import Anthropic
 from .state import ChatState
 from dotenv import load_dotenv
-from config import SYSTEM_PROMPT
+from gitclaude.config import SYSTEM_PROMPT
 
 load_dotenv()
 api_key = os.getenv("ANTHROPIC_API_KEY")

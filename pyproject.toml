@@ -46,7 +46,7 @@ dependencies = [
 ]
 
 [project.scripts]
-git-claude = "cli:cli"
+git-claude = "gitclaude.cli:cli"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
