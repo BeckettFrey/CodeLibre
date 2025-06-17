@@ -1,5 +1,4 @@
 # GitClaude/tests/graph/nodes.py
-
 import os
 from anthropic import Anthropic
 from .state import ChatState

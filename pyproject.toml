@@ -1,6 +1,11 @@
 [project]
 name = "git-claude"
-version = "0.1.0"
+version = "0.1.0.dev0"
+description = "A command-line tool to interact with Claude AI models using Git-like commands."
+authors = [{ name = "Beckett Frey", email = "beckett.frey@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.13.2"
+license = { text = "MIT" }
 
 dependencies = [
     "annotated-types==0.7.0",
