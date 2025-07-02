@@ -125,7 +125,7 @@ def ask(state: ChatState) -> ChatState:
     
     for attempt in range(max_retries):
         try:
-            print(f"\nscs{Colors.BLUE}🤖 Asking AI...{Colors.RESET}")
+            print(f"\n{Colors.BLUE}🤖 Asking AI...{Colors.RESET}")
             response = llm.invoke(messages)
             
             if not response or not getattr(response, "content", "").strip():
