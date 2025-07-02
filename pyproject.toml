@@ -1,7 +1,7 @@
 [project]
 name = "codelibre"
 version = "0.1.0.dev0"
-description = "A command-line tool to interact with Claude AI models using Git-like commands."
+description = "A command-line tool to interact with both AI and Git, enabling intelligent code analysis, commit message generation, and more."
 authors = [{ name = "Beckett Frey", email = "beckett.frey@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.13.2"
@@ -21,7 +21,7 @@ dependencies = [
     "jiter==0.10.0",
     "jsonpatch==1.33",
     "jsonpointer==3.0.0",
-    "langchain-core==0.3.65",
+    "langchain-core>=0.3.66,<1.0",
     "langgraph==0.4.8",
     "langgraph-checkpoint==2.0.26",
     "langgraph-prebuilt==0.2.2",
