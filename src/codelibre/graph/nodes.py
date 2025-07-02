@@ -65,12 +65,8 @@ def add_input(state: ChatState) -> ChatState:
                     reiterate=False
                 )
             elif prompt.lower() in ['n', 'no', 'exit', 'quit']:
-                print(f"{Colors.RED}✗ Exiting...{Colors.RESET}")
                 raise ExitRequestedException("User requested exit")
             elif prompt:
-                # Display the commit message with special styling
-                commit_msg = f"{Colors.CYAN}{Colors.BOLD}📝 COMMIT: {prompt}{Colors.RESET}"
-                print(f"\n{commit_msg}")
                 state.reiterate = True
                 break
         except (EOFError, KeyboardInterrupt):
@@ -114,8 +110,6 @@ def ask(state: ChatState) -> ChatState:
     import time
     from anthropic import APIStatusError
 
-    print(state.messages)  # Debug: show current conversation state
-    
     # Prepare full prompt: system message + conversation history
     messages = []
     if state.system_prompt:
@@ -131,7 +125,7 @@ def ask(state: ChatState) -> ChatState:
     
     for attempt in range(max_retries):
         try:
-            print(f"{Colors.BLUE}🤖 Asking AI...{Colors.RESET}")
+            print(f"\nscs{Colors.BLUE}🤖 Asking AI...{Colors.RESET}")
             response = llm.invoke(messages)
             
             if not response or not getattr(response, "content", "").strip():

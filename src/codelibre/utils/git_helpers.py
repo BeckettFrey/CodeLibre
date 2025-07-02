@@ -77,7 +77,7 @@ def run_git_command(args: Union[List[str], str], cwd: str = None) -> subprocess.
         
         # Basic security check - no shell injection attempts
         if any(dangerous in arg for dangerous in [';', '&', '|', '`', '$(']):
-            raise GitCommandError(messsage=f"Potentially dangerous character in git argument: {arg}")
+            raise GitCommandError(message=f"Potentially dangerous character in git argument: {arg}")
         
         safe_args.append(arg)
     

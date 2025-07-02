@@ -14,9 +14,9 @@ import traceback
 
 def print_header():
     """Print a clean header for the application."""
-    print(f"\n{Colors.CYAN}{Colors.BOLD}{'─' * 50}")
-    print("  🚀 Smart Git Commit Message Generator")
-    print(f"{'─' * 50}{Colors.RESET}")
+    print(f"\n{Colors.CYAN}{Colors.BOLD}{'─' * 43}")
+    print("  🚀 CodeLibre - Smart Commit Generator")
+    print(f"{'─' * 43}{Colors.RESET}")
 
 
 def print_separator():

@@ -1,160 +1,195 @@
-# GitClaude
-[![CI](https://github.com/BeckettFrey/GitClaude/actions/workflows/ci.yml/badge.svg)](https://github.com/BeckettFrey/GitClaude/actions/workflows/ci.yml)
+# CodeLibre 🚀
+[![CI](https://github.com/BeckettFrey/CodeLibre/actions/workflows/ci.yml/badge.svg)](https://github.com/BeckettFrey/CodeLibre/actions/workflows/ci.yml)
 
-**GitClaude** is an experimental AI-powered Git automation tool. Built on Anthropic Claude and LangGraph, it brings intelligent assistance to your local development workflow—starting with commit message generation and expanding toward deeper code context, changelogs, etc.
+**CodeLibre** is an intelligent CLI tool that brings AI-powered automation to your Git workflow. Built with Claude and LangGraph, it analyzes your code changes and generates meaningful commit messages, helping you maintain clean Git history effortlessly.
 
-> ⚠️ **Early Development**: This project is in active development. Use at your own risk and install in editable mode.
-
-> ✨ Ideal for developers who want to automate Git workflows and integrate AI into their local dev loop—starting with clean commits.
+> ⚠️ **Early Development**: This project is actively evolving. Install in development mode and use at your own discretion.
 
 ---
-## 🔧 Features
 
-- 🧠 Analyzes your Git diffs and stages
-- ✅ Generates concise commit messages like:
+## ✨ Features
+
+- 🧠 **Smart Analysis** - Analyzes Git diffs and staged changes with AI precision
+- 📝 **Clean Commits** - Generates conventional commit messages:
   ```
   feat: add user authentication system
-  fix: resolve memory leak in data processor
+  fix: resolve memory leak in data processor  
   refactor: simplify API response handling
   docs: update README with usage examples
   ```
-- ...
+- 🎯 **Flexible Staging** - Work with staged files, all changes, or specific files
+- 🔒 **Safe by Design** - Built-in validation and confirmation prompts
+- ⚡ **Fast & Local** - Token-efficient, no cloud infrastructure required
 
 ---
 
-## 💡 Why GitClaude?
+## 🚀 Quick Start
 
-GitClaude gives you **Claude-powered Git automation** in a local-first, developer-friendly package.
-
-> ⚡ It's a lightweight, open alternative to Anthropic's **CODE CLI**.
-
-- 💸 Designed for **token-efficient local use** — lower cost than CODE CLI
-- ✅ No cloud infra or backend setup required
-- 🧩 Easily extendable: add RAG, custom prompts, or GitHub integration
-- 🧠 Built on Claude + LangGraph = modular, powerful, cheap
-- 🔒 Built-in validation safety to prevent malicious commits
-
----
-
-## ⚙️ Setup
-
-### Installation (Development Mode)
-
-⚠️ **Important**: GitClaude is in early development. Install in editable mode for testing:
+### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/BeckettFrey/GitClaude.git
-cd GitClaude
+git clone https://github.com/BeckettFrey/CodeLibre.git
+cd CodeLibre
 
-# Install in editable development mode
+# Install in development mode
 pip install -e .
 ```
 
-### Configuration
+### Setup
 
-1. Set up your API key:
-```bash
-# Create a .env file in your working directory or set environment variable
-export ANTHROPIC_API_KEY=your_api_key_here
-```
+1. **Configure your API key:**
+   ```bash
+   export ANTHROPIC_API_KEY=your_api_key_here
+   ```
 
-2. Optional: Customize configuration by adjusting the `src/config.json` for prompt styles and validation settings.
-
----
-
-## 🚀 Usage
-
-⚠️ **Note**: Basic commit message generation is working. Other features are experimental.
-
-After installation, use the `git-claude` command from anywhere:
-
-```bash
-# Use staged changes only (EXPERIMENTAL)
-git-claude --staged
-
-# Stage all files and generate commit message (EXPERIMENTAL)
-git-claude --all
-
-# Add specific files before generating commit message (EXPERIMENTAL)
-git-claude -e file1.py file2.js
-```
-
-### Example workflows:
-
-**Auto-staging all changes:**
-```bash
-❯ git-claude --all
-🔧 Running git add for all files
-🔍 Analyzing staged changes...
--------------------- M --------------------
-docs: add readme and files
--------------------------------------------
-❓ Proceed with this commit message? (y/n):
-```
-
-**Using only staged changes:**
-```bash
-❯ git add src/main.py
-❯ git-claude --staged
-🔍 Analyzing staged changes...
--------------------- M --------------------
-feat: implement core functionality in main module
--------------------------------------------
-❓ Proceed with this commit message? (y/n):
-```
+2. **Start using CodeLibre:**
+   ```bash
+   # Generate commit from staged changes
+   codelibre --staged
+   
+   # Stage all files and generate commit
+   codelibre --all
+   
+   # Add specific files and generate commit
+   codelibre -e src/main.py README.md
+   ```
 
 ---
 
-## 📦 Dependencies
+## 💡 Usage Examples
 
-GitClaude is built with:
-- anthropic
-- langgraph
-- python-dotenv
-- pydantic
+### Interactive Workflow
+```bash
+❯ codelibre --all
+───────────────────────────────────────────
+  🚀 CodeLibre - Smart Commit Generator
+───────────────────────────────────────────
+⚙ Staging all files...
+✓ All files staged successfully
+──────────────────────────────
+⚙ Analyzing staged changes...
+⚙ Generating commit message...
 
-All dependencies are automatically installed when you install via pip.
+🤖 Asking AI...
+refactor: update app name and remove debug messages ✓ AI response
+
+ INPUT REQUIRED 
+→ Respond (or 'y' to continue, 'n' to exit): y
+✓ Continuing...
+
+📝 Proposed Commit Message: refactor: update app name and remove debug messages
+──────────────────────────────
+What would you like to do?
+  [y]es    → Commit now
+  [e]dit   → Modify message  
+  [n]o     → Cancel
+
+Your choice (y/e/n): y
+⚙ Committing changes...
+✓ Successfully committed!
+```
+
+### Targeted File Staging
+```bash
+❯ codelibre -e src/core.py tests/test_core.py
+───────────────────────────────────────────
+  🚀 CodeLibre - Smart Commit Generator
+───────────────────────────────────────────
+⚙ Staging specified files: src/core.py, tests/test_core.py
+✓ Files staged successfully
+──────────────────────────────
+⚙ Analyzing staged changes...
+⚙ Generating commit message...
+
+feat: implement core functionality with comprehensive tests
+```
 
 ---
 
-## 🔮 Roadmap
+## 🎯 Why CodeLibre?
 
-GitClaude is just getting started. Planned features include:
+CodeLibre bridges the gap between AI-powered development tools and local Git workflows:
 
-- 🧾 `--explain`: Natural language summary of the diff
-- ✍️ `--interactive`: Edit Claude's message before committing
-- 🔁 Pull request changelogs from branch history
-- 📜 Configurable prompt + commit styles (JSON-based)
-- ...
+- **🏠 Local-First** - No cloud storage dependencies outside of whatever anthropic does, your code stays private
+- **💰 Cost-Effective** - Token-efficient design minimizes API costs
+- **🛡️ Safe & Reliable** - Built-in validation prevents malicious commits
+- **🔧 Developer-Friendly** - Clean CLI interface with intuitive options
+- **🚀 Extensible** - Built on LangGraph for easy customization
+
+---
+
+## 🛠️ Command Reference
+
+| Command | Description |
+|---------|-------------|
+| `codelibre --staged` | Generate commit message from currently staged files |
+| `codelibre --all` | Stage all changes and generate commit message |
+| `codelibre -e <files...>` | Stage specific files and generate commit message |
+
+### Options
+- Interactive confirmation with edit capability
+- Automatic staging and unstaging
+- Color-coded output for better readability
+- Graceful error handling with helpful messages
+
+---
+
+## 🏗️ Architecture
+
+CodeLibre is built with modern Python tools:
+
+- **🤖 Anthropic Claude** - AI-powered code analysis and message generation
+- **📊 LangGraph** - Modular workflow orchestration
+- **🔧 Pydantic** - Type-safe configuration and validation
+- **🎨 Rich CLI** - Beautiful terminal interface
+
+---
+
+## 🗺️ Roadmap
+
+Planned enhancements for future releases:
+
+- 📋 **`--explain`** - Natural language summaries of code changes
+- ✏️ **`--interactive`** - Advanced editing mode with suggestions
+- 📚 **`--changelog`** - Generate changelogs from commit history
+- 🎛️ **Custom Templates** - Configurable commit message formats
+- 🔗 **GitHub Integration** - PR descriptions and release notes
+- 🧠 **Context Memory** - Learn from your commit patterns
 
 ---
 
 ## 🤝 Contributing
 
-Ideas, PRs, and feature requests welcome! This project is in early development.
+We welcome contributions! CodeLibre is in active development and there's plenty of room for improvement.
 
-**Current Status**: Core commit message generation is functional, but many features are still being developed and layered tests are continually being added as my knowledge of best practices expands.
-
-For development:
-
+### Development Setup
 ```bash
-# Clone the repository
-git clone https://github.com/BeckettFrey/GitClaude.git
-cd GitClaude
-
-# Install in editable development mode
+# Clone and install
+git clone https://github.com/BeckettFrey/CodeLibre.git
+cd CodeLibre
 pip install -e .
 
-# Install development dependencies
+# Install dev dependencies
 pip install -r requirements-dev.txt
 
 # Run tests
 pytest
 ```
 
+### Current Status
+- ✅ Core commit generation working
+- ✅ Interactive CLI with confirmation
+- ✅ Flexible file staging options
+- 🚧 Advanced features in development
+- 🚧 Comprehensive test coverage expanding
+
 ---
 
 ## 📄 License
 
-MIT License
+MIT License - see [LICENSE](LICENSE) for details.
+
+---
+
+*CodeLibre - Where AI meets Git, locally and efficiently.*
