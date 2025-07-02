@@ -1,10 +1,10 @@
 [project]
-name = "git-claude"
+name = "codelibre"
 version = "0.1.0.dev0"
 description = "A command-line tool to interact with Claude AI models using Git-like commands."
 authors = [{ name = "Beckett Frey", email = "beckett.frey@gmail.com" }]
 readme = "README.md"
-requires-python = ">=3.11.9"
+requires-python = ">=3.13.2"
 license = { text = "MIT" }
 
 dependencies = [
@@ -42,11 +42,12 @@ dependencies = [
     "urllib3==2.4.0",
     "xxhash==3.5.0",
     "zstandard==0.23.0",
-    "dotenv==0.9.9"
+    "dotenv==0.9.9",
+    "langchain-anthropic==0.3.16"
 ]
 
 [project.scripts]
-git-claude = "gitclaude.cli:cli"
+codelibre = "codelibre.cli:cli"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
