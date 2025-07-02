@@ -193,6 +193,5 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
-
-# Package-specific ignores
-.codelibre.db
+# Package-specific
+*libre.db*
