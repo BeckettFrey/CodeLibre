@@ -1,29 +1,29 @@
-# CodeLibre 🚀
+# CodeLibre
 [![CI](https://github.com/BeckettFrey/CodeLibre/actions/workflows/ci.yml/badge.svg)](https://github.com/BeckettFrey/CodeLibre/actions/workflows/ci.yml)
 
 **CodeLibre** is an intelligent CLI tool that brings AI-powered automation to your Git workflow. Built with Claude and LangGraph, it analyzes your code changes and generates meaningful commit messages, helping you maintain clean Git history effortlessly.
 
-> ⚠️ **Early Development**: This project is actively evolving. Install in development mode and use at your own discretion.
+> **Experimental**: Install in development mode and use at your own discretion.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🧠 **Smart Analysis** - Analyzes Git diffs and staged changes with AI precision
-- 📝 **Clean Commits** - Generates conventional commit messages:
+- **Smart Analysis** - Analyzes Git diffs and staged changes with AI precision
+- **Clean Commits** - Generates conventional commit messages:
   ```
   feat: add user authentication system
   fix: resolve memory leak in data processor  
   refactor: simplify API response handling
   docs: update README with usage examples
   ```
-- 🎯 **Flexible Staging** - Work with staged files, all changes, or specific files
-- 🔒 **Safe by Design** - Built-in validation and confirmation prompts
-- ⚡ **Fast & Local** - Token-efficient, no cloud infrastructure required
+- **Flexible Staging** - Work with staged files, all changes, or specific files
+- **Safe by Design** - Built-in validation and confirmation prompts
+- **Fast & Local** - Token-efficient, no state tracking cloud infrastructure
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -57,69 +57,42 @@ pip install -e .
 
 ---
 
-## 💡 Usage Examples
+## Usage Example
 
 ### Interactive Workflow
 ```bash
-❯ codelibre --all
-───────────────────────────────────────────
-  🚀 CodeLibre - Smart Commit Generator
-───────────────────────────────────────────
-⚙ Staging all files...
-✓ All files staged successfully
-──────────────────────────────
-⚙ Analyzing staged changes...
-⚙ Generating commit message...
+codelibre --all
+-------------------------------------------
+  CodeLibre - Smart Commit Generator
+-------------------------------------------
+Staging all files...
+All files staged successfully
+------------------------------
+Analyzing staged changes...
+Generating commit message...
 
-🤖 Asking AI...
-refactor: update app name and remove debug messages ✓ AI response
+Asking AI...
+refactor: update app name and remove debug messages
 
- INPUT REQUIRED 
-→ Respond (or 'y' to continue, 'n' to exit): y
-✓ Continuing...
+INPUT REQUIRED 
+-> Respond (or 'y' to continue, 'n' to exit): y
+Continuing...
 
-📝 Proposed Commit Message: refactor: update app name and remove debug messages
-──────────────────────────────
+Proposed Commit Message: refactor: update app name and remove debug messages
+------------------------------
 What would you like to do?
-  [y]es    → Commit now
-  [e]dit   → Modify message  
-  [n]o     → Cancel
+  [y]es    -> Commit now
+  [e]dit   -> Modify message  
+  [n]o     -> Cancel
 
 Your choice (y/e/n): y
-⚙ Committing changes...
-✓ Successfully committed!
-```
-
-### Targeted File Staging
-```bash
-❯ codelibre -e src/core.py tests/test_core.py
-───────────────────────────────────────────
-  🚀 CodeLibre - Smart Commit Generator
-───────────────────────────────────────────
-⚙ Staging specified files: src/core.py, tests/test_core.py
-✓ Files staged successfully
-──────────────────────────────
-⚙ Analyzing staged changes...
-⚙ Generating commit message...
-
-feat: implement core functionality with comprehensive tests
+Committing changes...
+Successfully committed!
 ```
 
 ---
 
-## 🎯 Why CodeLibre?
-
-CodeLibre bridges the gap between AI-powered development tools and local Git workflows:
-
-- **🏠 Local-First** - No cloud storage dependencies outside of whatever anthropic does, your code stays private
-- **💰 Cost-Effective** - Token-efficient design minimizes API costs
-- **🛡️ Safe & Reliable** - Built-in validation prevents malicious commits
-- **🔧 Developer-Friendly** - Clean CLI interface with intuitive options
-- **🚀 Extensible** - Built on LangGraph for easy customization
-
----
-
-## 🛠️ Command Reference
+## Command Reference
 
 | Command | Description |
 |---------|-------------|
@@ -135,33 +108,31 @@ CodeLibre bridges the gap between AI-powered development tools and local Git wor
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 CodeLibre is built with modern Python tools:
 
-- **🤖 Anthropic Claude** - AI-powered code analysis and message generation
-- **📊 LangGraph** - Modular workflow orchestration
-- **🔧 Pydantic** - Type-safe configuration and validation
-- **🎨 Rich CLI** - Beautiful terminal interface
+- **Anthropic Claude** - AI-powered code analysis and message generation
+- **LangGraph** - Modular workflow orchestration
+- **Pydantic** - Type-safe configuration and validation
+- **Rich CLI** - Beautiful terminal interface
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap June 2025
 
-Planned enhancements for future releases:
-
-- 📋 **`--explain`** - Natural language summaries of code changes
-- ✏️ **`--interactive`** - Advanced editing mode with suggestions
-- 📚 **`--changelog`** - Generate changelogs from commit history
-- 🎛️ **Custom Templates** - Configurable commit message formats
-- 🔗 **GitHub Integration** - PR descriptions and release notes
-- 🧠 **Context Memory** - Learn from your commit patterns
+- **`--explain`** - Natural language summaries of code changes
+- **`--interactive`** - Advanced editing mode with suggestions
+- **`--changelog`** - Generate changelogs from commit history
+- **Custom Templates** - Configurable commit message formats
+- **GitHub Integration** - PR descriptions and release notes
+- **Context Memory** - Learn from your commit patterns
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-We welcome contributions! CodeLibre is in active development and there's plenty of room for improvement.
+We welcome contributions! Suggest changes freely.
 
 ### Development Setup
 ```bash
@@ -178,18 +149,17 @@ pytest
 ```
 
 ### Current Status
-- ✅ Core commit generation working
-- ✅ Interactive CLI with confirmation
-- ✅ Flexible file staging options
-- 🚧 Advanced features in development
-- 🚧 Comprehensive test coverage expanding
+- Core commit generation working
+- Interactive CLI with confirmation
+- Flexible file staging options
+- Comprehensive test coverage expanding
 
 ---
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-*CodeLibre - Where AI meets Git, locally and efficiently.*
+*CodeLibre - Where AI meets Git (locally) and with a human in the loop.*
