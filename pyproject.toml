@@ -1,8 +1,8 @@
 [project]
 name = "codelibre"
-version = "0.1.0.dev0"
+version = "0.1.0"
 description = "A command-line tool to interact with both AI and Git, enabling intelligent code analysis, commit message generation, and more."
-authors = [{ name = "Beckett Frey", email = "beckett.frey@gmail.com" }]
+authors = [{ name = "Beckett Frey", email = "beckett.code@outlook.com" }]
 readme = "README.md"
 requires-python = ">=3.13.2"
 license = { text = "MIT" }
